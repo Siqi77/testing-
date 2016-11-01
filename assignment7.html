@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monthly Temp</title>
+	<!-- Load JQuery -->
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	<meta charset="utf-8">
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<h2>Monthly Temperature</h2>
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	<script>
+  $(function () {
+  $('#container').highcharts({
+      chart: {
+          type: 'column'
+      },
+      title: {
+          text: 'New York City Leading Causes of Death'
+      },
+      xAxis: {
+          categories: ['2007', '2008', '2009', '2010', '2011']
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Percent of hispanic male death causes'
+          },
+          stackLabels: {
+              enabled: true,
+              style: {
+                  fontWeight: 'bold',
+                  color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+              }
+          }
+      },
+      legend: {
+          align: 'right',
+          x: -30,
+          verticalAlign: 'top',
+          y: 25,
+          floating: true,
+          backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+          borderColor: '#CCC',
+          borderWidth: 1,
+          shadow: false
+      },
+      tooltip: {
+          headerFormat: '<b>{point.x}</b><br/>',
+          pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+      },
+      plotOptions: {
+          column: {
+              stacking: 'normal',
+              dataLabels: {
+                  enabled: true,
+                  color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+              }
+          }
+      },
+      series: [{
+          name: 'Assault',
+          data: [2, 2, 2, 2, 1]
+      }, {
+          name: 'Mental disorder due to disuse of alcohol',
+          data: [1, 1, 1, 1, 0]
+      }, {
+          name: 'Disease of heart',
+          data: [29, 28, 28, 28, 25]
+      }]
+  });
+});
+	</script>
+
+</body>
+</html>
