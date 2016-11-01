@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monthly Temp</title>
+	<!-- Load JQuery -->
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+  <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	<meta charset="utf-8">
+
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+	<h2>Homeless Population</h2>
+	<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+	<script>
+	$(function () {
+	Highcharts.chart('container', {
+			title: {
+					text: 'Directory Of Homeless Population By Year',
+					x: -20 //center
+			},
+			subtitle: {
+					text: 'Table of homeless population by Year (for years 2009 through 2012)',
+					x: -20
+			},
+			xAxis: {
+					categories: ['2009', '2010', '2011', '2012']
+			},
+			yAxis: {
+					title: {
+							text: 'Homeless Estimates (person)'
+					},
+					plotLines: [{
+							value: 0,
+							width: 1,
+							color: '#808080'
+					}]
+			},
+			tooltip: {
+					valueSuffix: '°C'
+			},
+			legend: {
+					layout: 'vertical',
+					align: 'right',
+					verticalAlign: 'middle',
+					borderWidth: 0
+			},
+			series: [{
+					name: 'Subways',
+					data: [968, 1277, 1275, 1634]
+			}, {
+					name: 'Surface-Area Bronx',
+					data: [164, 174, 115, 169]
+			}, {
+					name: 'Surface-Area Queens',
+					data: [98, 112, 102, 86]
+			}, {
+					name: 'Surface-Area Brooklyn',
+					data: [164, 428, 242, 368]
+			}]
+	});
+});
+	</script>
+
+</body>
+</html>
